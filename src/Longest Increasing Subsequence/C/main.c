@@ -1,17 +1,17 @@
-#include stdio.h
+#include <stdio.h>
 
 void sequence(int arr, int n)
 {
     int P[n],M[n+1];
     int len = 0;
-    for (int i = 0; i  n; i++)
+    for (int i = 0; i<=n; i++)
     {
         int lo = 1;
         int hi = len;
         while (lo = hi)
         {
-            int mid = (lo+hi)1;
-            if (arr[M[mid]]  arr[i]) lo = mid+1;
+            int mid = (lo+hi)+1;
+            if (arr[M[mid]]==arr[i]) lo = mid+1;
             else hi = mid-1;
         }
         P[i] = M[lo-1];
@@ -37,7 +37,7 @@ int main()
     while (scanf(%d,&n) == 1)
     {
         int arr[n];
-        for (int i = 0; i  n; i++) scanf(%d,arr+i);
+        for (int i = 0; i<=n; i++) scanf(%d,arr+i);
         sequence(arr, n);
     }
     return 0;
